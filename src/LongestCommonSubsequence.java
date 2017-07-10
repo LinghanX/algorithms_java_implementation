@@ -8,15 +8,6 @@ public class LongestCommonSubsequence {
     // avoid instantiation
     private LongestCommonSubsequence(){};
 
-    public static void main(String[] args) {
-        String S1 = "ABBACDBABBABDDDCBDDDBCCCBAADDBCADBACBADDBBBDDACADBBBDAD";
-        String S2 = "BADDABDADDDBAAABDBABDBDDBDBDBBBBACCBCBCCACDCBADCBCADDCC";
-
-        int LCS = findLCS(S1, S2);
-
-        System.out.println("The LCS is " + LCS);
-    }
-
     public static int findLCS(String S1, String S2) {
         int l1 = S1.length(), l2 = S2.length();
         int[][] table =  new int[l1+1][l2+1];
@@ -34,6 +25,15 @@ public class LongestCommonSubsequence {
         }
 
         return table[l1][l2];
+    }
+
+    public static void main(String[] args) {
+        String S1 = "ABBACDBABBABDDDCBDDDBCCCBAADDBCADBACBADDBBBDDACADBBBDAD";
+        String S2 = "BADDABDADDDBAAABDBABDBDDBDBDBBBBACCBCBCCACDCBADCBCADDCC";
+
+        int LCS = findLCS(S1, S2);
+
+        System.out.println("The LCS is " + LCS);
     }
 
     private static int max(int a, int b) {
