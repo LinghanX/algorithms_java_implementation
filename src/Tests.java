@@ -59,7 +59,7 @@ public class Tests {
     }
 
     private static void testSelectionArray(int[] array) {
-        System.out.println("Testing insertion sort");
+        System.out.println("Testing selection sort");
         int[] localCopy = array.clone();
         selectionSort(localCopy);
 

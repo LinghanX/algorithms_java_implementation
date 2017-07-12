@@ -31,19 +31,15 @@ public class ClosestPair {
         closest(xOrderPoints, yOrderPoints, aux, 0, length-1);
     }
 
-    public double distance() {
-        return this.bestDistance;
-    }
+    public double distance() { return this.bestDistance; }
 
-    public Point2D[] closestPair() {
-        return new Point2D[] { point1, point2 };
-    }
+    public Point2D[] closestPair() { return new Point2D[] { point1, point2 }; }
 
     private double closest(Point2D[] xOrder,
-                                         Point2D[] yOrder,
-                                         Point2D[] aux,
-                                         int low,
-                                         int high) {
+                           Point2D[] yOrder,
+                           Point2D[] aux,
+                           int low,
+                           int high) {
         if(high <= low) return Double.POSITIVE_INFINITY;
 
         int mid = low + (high - low)/2;
