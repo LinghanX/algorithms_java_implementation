@@ -12,6 +12,7 @@ public class BestStrategy {
         int length = input.length;
 
         int table[][] = new int[length+1][length+1];
+        // initialize table
         for(int i = 1; i < length+1; i++) {
             for(int j = 1; j< length+1; j++) {
                 if(j < i) continue; // we only needs when i < j
@@ -28,21 +29,17 @@ public class BestStrategy {
         int counter = 2;
         while(counter < 10) {
             for(int l = 1; l < length+1; l++) {
-                for(int k = 1; k < length+1; k++) {
-                    if(k - l <= 1) continue;
-                    if(k - l == counter) {
-                        table[l][k] = max(
-                                input[l-1] + sum(input, l, k) - table[l+1][k],
-                                input[k-1] + sum(input, l-1, k-1) - table[l][k-1]);
-                    }
-                }
+                int k = l + counter;
+                if(k >= length + 1) break;
+                table[l][k] = max(
+                        input[l-1] + sum(input, l, k) - table[l+1][k],
+                        input[k-1] + sum(input, l-1, k-1) - table[l][k-1]);
             }
 
             counter++;
         }
 
         print2DTable(table);
-
         return table[0][n-1];
     }
 
