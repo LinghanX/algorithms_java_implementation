@@ -223,14 +223,6 @@ public class DFS {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        /* test files
-        String testFilePath =
-                "/Users/Linghan/Documents/NEU/CS5800/assignments/ProgrammingAssignment/src/graph.txt";
-        String testMediumFilePath =
-                "/Users/Linghan/Documents/NEU/CS5800/assignments/ProgrammingAssignment/src/mediumGraph.txt";
-        String testLargeFilePath =
-                "/Users/Linghan/Documents/NEU/CS5800/assignments/ProgrammingAssignment/src/largeDG.txt";
-        */
         String argPath = args[0];
         File file = new File(argPath);
         Graph test = new Graph(file);
